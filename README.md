@@ -69,6 +69,7 @@ uv run app/main.py <reel_url1> <reel_url2> ...
 
 ### 核心模組
 
+- `config.py`：管理敏感資訊
 - `main.py`：程式進入點，處理參數及協調執行流程
 - `page_actions.py`：頁面互動操作（登入、滾動、點擊等）
 - `page_parser.py`：頁面內容解析（標籤、描述、數據提取）
