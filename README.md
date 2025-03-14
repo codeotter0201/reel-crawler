@@ -115,6 +115,19 @@ uv run app/main.py <reel_url1> <reel_url2> ...
 "https://www.facebook.com/reel/1529668634395562"
 ```
 
+### 測試指令
+
+```bash
+uv run app/main.py \
+    https://www.facebook.com/reel/1261058915181865 \
+    https://www.facebook.com/reel/1710788673178979 \
+    https://www.facebook.com/reel/976095654399185 \
+    https://www.facebook.com/reel/8712802535486571 \
+    https://www.facebook.com/reel/968163031712451 \
+    https://www.facebook.com/reel/1313719486554645 \
+    https://www.facebook.com/reel/1529668634395562
+```
+
 ## 資料存取
 
 ### 資料儲存
