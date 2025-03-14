@@ -12,7 +12,7 @@ Facebook Reel 爬蟲工具，專門用於擷取 Reel 影片的相關資訊，包
 
 ## 環境需求
 
-- Python 3.12
+- Python `3.12`
 - 主要依賴套件：
   ```toml
   pydantic >= 2.0
