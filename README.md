@@ -23,6 +23,35 @@ Facebook Reel 爬蟲工具，專門用於擷取 Reel 影片的相關資訊，包
   beautifulsoup4 == 4.13.3
   ```
 
+## 專案結構
+
+### 核心模組
+
+- `config.py`：管理敏感資訊
+- `main.py`：程式進入點，處理參數及協調執行流程
+- `page_actions.py`：頁面互動操作（登入、滾動、點擊等）
+- `page_parser.py`：頁面內容解析（標籤、描述、數據提取）
+- `webdriver_setup.py`：Selenium **WebDriver** 設定
+- `models.py`：資料模型定義（使用 Pydantic）
+- `utils.py`：通用工具函式
+
+## 執行流程
+
+1. Facebook 登入驗證
+2. 跳轉至指定 Reel
+3. 資料擷取流程：
+   - 影片內容及標籤提取
+   - 留言及回覆展開
+   - 使用者資訊擷取
+   - 互動數據收集
+
+## 支援的 Reel 類型
+
+- 一般貼文（含/不含賞星星按鈕）
+- Instagram 轉發貼文
+- 廣告貼文
+- 無留言貼文
+
 ## 快速開始
 
 ### 1. 安裝專案
@@ -67,36 +96,7 @@ WEB_DRIVER_PATH=user_data
 uv run app/main.py <reel_url1> <reel_url2> ...
 ```
 
-## 專案結構
-
-### 核心模組
-
-- `config.py`：管理敏感資訊
-- `main.py`：程式進入點，處理參數及協調執行流程
-- `page_actions.py`：頁面互動操作（登入、滾動、點擊等）
-- `page_parser.py`：頁面內容解析（標籤、描述、數據提取）
-- `webdriver_setup.py`：Selenium WebDriver 設定
-- `models.py`：資料模型定義（使用 Pydantic）
-- `utils.py`：通用工具函式
-
-## 執行流程
-
-1. Facebook 登入驗證
-2. 跳轉至指定 Reel
-3. 資料擷取流程：
-   - 影片內容及標籤提取
-   - 留言及回覆展開
-   - 使用者資訊擷取
-   - 互動數據收集
-
-## 支援的 Reel 類型
-
-- 一般貼文（含/不含賞星星按鈕）
-- Instagram 轉發貼文
-- 廣告貼文
-- 無留言貼文
-
-### 測試範例
+### 測試範例網址
 
 ```python
 # 一般貼文（含賞星星）
@@ -132,7 +132,7 @@ uv run app/main.py \
 
 ## 資料存取
 
-### 資料儲存
+### 儲存
 
 爬取的資料會自動儲存至 `download_data/data.pkl`，包含所有 Reel 的相關資訊：
 
@@ -142,7 +142,7 @@ uv run app/main.py \
 - 使用者資料
 - 標籤資訊
 
-### 資料讀取
+### 讀取
 
 使用以下方式讀取已下載的資料：
 
